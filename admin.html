@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Paneli - Bataryam Hazır</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- Admin Giriş Modalı -->
+  <div id="admin-password-modal" class="modal" style="display:flex;">
+    <form id="admin-password-form" class="modal-content">
+      <h2>Admin Girişi</h2>
+      <input type="password" id="admin-password-input" placeholder="Şifre" required minlength="10">
+      <button type="submit">Giriş Yap</button>
+      <div id="admin-password-error" style="display:none;"></div>
+      <div class="modal-info">Güçlü bir şifre gereklidir. En az 10 karakter, büyük/küçük harf, rakam ve sembol içermelidir.</div>
+    </form>
+  </div>
+  <div class="admin-container" style="display:none;">
+    <header class="admin-header">
+      <h1>Bataryam Hazır - Admin Paneli</h1>
+      <a href="index.html" class="home-btn">Ana Sayfaya Dön</a>
+      <nav class="admin-nav">
+        <button class="nav-btn active" onclick="showSection('haberler')">Haberler</button>
+        <button class="nav-btn" id="modeller-btn" onclick="showSection('modeller')">Elektrikli Araç Modelleri</button>
+      </nav>
+    </header>
+    <main class="admin-main">
+      <section id="haberler" class="admin-section active">
+        <div class="section-header">
+          <h2>Haber Yönetimi</h2>
+          <button class="add-btn" onclick="openModal('haber')">+ Yeni Haber Ekle</button>
+        </div>
+        <div id="haberler-list" class="content-grid"></div>
+      </section>
+      <section id="modeller" class="admin-section" style="display:none;">
+        <div class="section-header">
+          <h2>Elektrikli Araç Modelleri</h2>
+          <button class="add-btn" onclick="openModal('model')">+ Yeni Model Ekle</button>
+          <button class="add-btn" id="backup-models-btn">Modelleri Yedekle</button>
+          <label for="restore-models-input" class="add-btn">Modelleri Geri Yükle</label>
+          <input type="file" id="restore-models-input" accept="application/json" style="display:none;">
+        </div>
+        <div id="modeller-list" class="content-grid"></div>
+      </section>
+    </main>
+  </div>
+  <!-- Modal - Ekle/Düzenle -->
+  <div id="content-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title">Ekle/Düzenle</h3>
+      <form id="content-form" enctype="multipart/form-data">
+        <div class="form-group" id="form-fields"></div>
+        <div class="modal-footer">
+          <button type="submit" class="save-btn">Kaydet</button>
+          <button type="button" class="cancel-btn" onclick="closeModal()">İptal</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html> 
