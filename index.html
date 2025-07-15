@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bataryam Hazır - Elektrikli Araçlar Haber ve Bilgi Platformu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="resimler/b5078747-73cb-408b-b309-71ad05f8cc73.png" alt="Bataryam Hazır Logo" style="height:60px;max-width:180px;width:auto;vertical-align:middle;display:block;">
+    </div>
+    <div class="hamburger-menu" id="hamburger-menu" style="display:none;flex-direction:column;gap:5px;cursor:pointer;width:38px;height:38px;justify-content:center;align-items:center;z-index:1002;">
+      <span style="width:28px;height:4px;background:#fff;border-radius:2px;display:block;"></span>
+      <span style="width:28px;height:4px;background:#fff;border-radius:2px;display:block;"></span>
+      <span style="width:28px;height:4px;background:#fff;border-radius:2px;display:block;"></span>
+    </div>
+    <nav id="main-navbar">
+      <a href="#">Ana Sayfa</a>
+      <a href="#haberler">Haberler</a>
+      <a href="#bilgiler">Bilgiler</a>
+      <a href="#modeller">Modeller</a>
+      <a href="#saris">Şarj İstasyonları</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="admin.html" class="admin-link">Admin</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero section-fade-hidden">
+      <div class="hero-content">
+        <h1 class="hero-title animate-slide-down" style="text-align:center;">Elektrikli Araçlar <span class="highlight-green">Dünyasına</span> <span class="highlight-blue">Hoş Geldiniz</span></h1>
+        <p class="hero-description animate-slide-left" style="text-align:center;">En <span class="highlight-yellow">güncel haberler</span>, <span class="highlight-purple">teknolojik gelişmeler</span> ve elektrikli araçlar hakkında her şey burada. Sürdürülebilir ulaşımın geleceğini birlikte keşfedin!</p>
+        <div style="display:flex;justify-content:center;gap:16px;">
+          <button class="hero-btn animate-slide-up">Güncel Haberler</button>
+          <a href="https://instagram.com/bataryamhazir" target="_blank" class="insta-btn" style="display:inline-flex;align-items:center;gap:8px;background:#e1306c;color:#fff;padding:14px 28px;border-radius:12px;font-weight:bold;font-size:1.1rem;text-decoration:none;box-shadow:0 2px 12px rgba(225,48,108,0.13);transition:background 0.2s;">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-image animate-slide-right">
+        <img src="resimler/WhatsApp Görsel 2025-07-14 saat 15.09.00_af3a5858.jpg" alt="Bataryam Hazır Logo">
+      </div>
+    </section>
+    <section class="news-section section-fade-hidden" id="haberler">
+      <h2>Güncel Haberler</h2>
+      <div class="news-slider-wrapper">
+        <button class="slider-arrow left" id="news-arrow-left" aria-label="Sola Kaydır">&#8592;</button>
+        <div class="news-slider" id="news-slider">
+          <!-- Dinamik olarak JS ile doldurulacak -->
+        </div>
+        <button class="slider-arrow right" id="news-arrow-right" aria-label="Sağa Kaydır">&#8594;</button>
+      </div>
+    </section>
+    <section class="info-section section-fade-hidden" id="bilgiler">
+      <h2>Elektrikli Araç Bilgileri</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Elektrikli Araç Nedir?</h3>
+          <p>Elektrikli araçlar, fosil yakıt yerine elektrik enerjisiyle çalışan çevre dostu ulaşım araçlarıdır.</p>
+        </div>
+        <div class="info-card">
+          <h3>Şarj Teknolojileri</h3>
+          <p>AC ve DC hızlı şarj, evde ve istasyonda şarj yöntemleri hakkında temel bilgiler.</p>
+        </div>
+        <div class="info-card">
+          <h3>Batarya Ömrü</h3>
+          <p>Batarya ömrünü uzatmak için dikkat edilmesi gerekenler ve yeni nesil batarya teknolojileri.</p>
+        </div>
+        <div class="info-card">
+          <h3>Çevreye Katkısı</h3>
+          <p>Elektrikli araçların karbon ayak izini azaltmadaki rolü ve sürdürülebilirlik avantajları.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="stations-section section-fade-hidden" id="saris">
+      <h2>Şarj İstasyonları</h2>
+      <p>Türkiye ve dünyadaki tüm elektrikli araç şarj istasyonlarını harita üzerinde keşfedin.</p>
+      <iframe src="https://map.openchargemap.io/?mode=embedded" allow="geolocation" frameborder="0" width="100%" height="500px" style="border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.13);"></iframe>
+    </section>
+    <section class="models section-fade-hidden" id="modeller">
+      <h2>Popüler Elektrikli Araç Modelleri</h2>
+      <div class="model-slider-wrapper">
+        <button class="slider-arrow left" id="model-arrow-left" aria-label="Sola Kaydır">&#8592;</button>
+        <div class="model-slider" id="model-slider">
+          <!-- Kartlar JS ile doldurulacak -->
+        </div>
+        <button class="slider-arrow right" id="model-arrow-right" aria-label="Sağa Kaydır">&#8594;</button>
+      </div>
+    </section>
+    <section class="about-section section-fade-hidden" id="hakkimizda">
+      <h2>Biz Kimiz?</h2>
+      <div class="about-content" style="max-width:600px;margin:32px auto 0 auto;padding:36px 32px 32px 32px;border-radius:22px;background:linear-gradient(135deg,#0f3d2e 60%,#1976d2 100%);box-shadow:0 4px 32px rgba(0,0,0,0.13);display:flex;flex-direction:column;align-items:center;gap:18px;">
+        <div style="font-size:2.5rem;line-height:1;margin-bottom:8px;">🔋</div>
+        <div style="font-size:1.25rem;font-weight:600;color:#4ade80;text-align:center;">Bataryam Hazır ekibi olarak elektrikli araçlar dünyasındaki en güncel haberleri, bilgileri ve gelişmeleri sizlerle buluşturuyoruz.</div>
+        <div style="color:#b6e0c6;font-size:1.05rem;text-align:center;max-width:480px;">Sürdürülebilir ulaşım, teknoloji ve topluluk ruhunu bir araya getiriyoruz. Elektrikli araçlar hakkında merak ettiklerinizi, son trendleri ve ipuçlarını burada bulabilirsiniz.</div>
+        <a href="https://instagram.com/bataryamhazir" target="_blank" style="margin-top:18px;display:flex;align-items:center;gap:10px;background:rgba(76,222,128,0.13);padding:12px 28px;border-radius:12px;font-weight:bold;color:#4ade80;font-size:1.15rem;text-decoration:none;transition:background 0.2s;">
+          <span style="font-size:1.5rem;">📷</span> @bataryamhazir
+        </a>
+      </div>
+    </section>
+    <!-- İletişim bölümü tamamen kaldırıldı -->
+  </main>
+  <footer>
+    <div class="footer-content">
+      <span>© 2024 Bataryam Hazır | Elektrikli Araçlar Bilgi ve Haber Platformu</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">İletişim</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+function toggleNewsDetail(btn) {
+  const detail = btn.nextElementSibling;
+  if (detail.style.display === 'none') {
+    detail.style.display = 'block';
+    btn.textContent = 'Kapat';
+  } else {
+    detail.style.display = 'none';
+    btn.textContent = 'Detaylı Bilgi';
+  }
+}
+
+    const API_BASE = window.location.hostname === "localhost" ? "http://localhost:3001/api" : "https://aaw-c886.onrender.com/api";
+    // Ana sayfa için dinamik haber yükleme
+    document.addEventListener('DOMContentLoaded', function() {
+      loadDynamicNews();
+      loadStaticModels();
+      // loadDynamicInfo(); // Kaldırıldı
+    });
+
+    function loadDynamicNews() {
+      fetch(`${API_BASE}/news`)
+        .then(res => res.json())
+        .then(haberler => {
+          const newsSlider = document.getElementById('news-slider');
+          newsSlider.innerHTML = '';
+          haberler.forEach(haber => {
+            const newsCard = document.createElement('div');
+            newsCard.className = 'news-card';
+            newsCard.innerHTML = `
+              <img src="${haber.image}" alt="${haber.title}">
+              <h3>${haber.title}</h3>
+              <p>${haber.summary}</p>
+              <a href="haber-detay.html?id=${haber.id}" class="news-detail-btn">Detaylı Bilgi</a>
+            `;
+            newsSlider.appendChild(newsCard);
+          });
+        });
+    }
+
+    // Slider arrow controls
+    document.addEventListener('DOMContentLoaded', function() {
+      const slider = document.getElementById('news-slider');
+      const leftBtn = document.getElementById('news-arrow-left');
+      const rightBtn = document.getElementById('news-arrow-right');
+      if (slider && leftBtn && rightBtn) {
+        leftBtn.onclick = () => {
+          slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
+        };
+        rightBtn.onclick = () => {
+          slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
+        };
+      }
+    });
+
+    // Dinamik model yükleme fonksiyonunu kaldırıp, statik 6 kart ekle
+    function loadStaticModels() {
+      const modeller = [
+        {
+          brand: 'Audi',
+          model: 'e-tron Sportback',
+          image: 'resimler/2020-Audi-E-Tron-Sportback-11.jpg',
+          content: 'Sportif tasarım, 440 km menzil ve üst düzey konfor bir arada.'
+        },
+        {
+          brand: 'Volkswagen',
+          model: 'ID.4',
+          image: 'resimler/2021-volkswagen-id.4-exterior-in-motion.jpg',
+          content: 'Modern çizgiler, geniş iç hacim ve 520 km’ye varan menzil.'
+        },
+        {
+          brand: 'Mercedes-Benz',
+          model: 'EQS 2025',
+          image: 'resimler/2025-mercedes-benz-eqs-exterior-113-6616f12b6d591.avif',
+          content: 'Lüks, teknoloji ve 780 km’ye varan menzil.'
+        },
+        {
+          brand: 'Tesla',
+          model: 'Model S',
+          image: 'resimler/2025-tesla-model-s-1-672d42e172407.avif',
+          content: 'Yüksek performans, uzun menzil ve yenilikçi sürüş.'
+        },
+        {
+          brand: 'BMW',
+          model: 'iX',
+          image: 'resimler/BMW_iX_IAA_2021_1X7A0204.jpg',
+          content: 'Lüks, ileri teknoloji ve 630 km’ye kadar menzil.'
+        },
+        {
+          brand: 'Hyundai',
+          model: 'Ioniq 5',
+          image: 'resimler/ioniq5-2024-og.jpg',
+          content: 'Yenilikçi tasarım, ultra hızlı şarj ve geniş iç mekan.'
+        }
+      ];
+      const modelSlider = document.getElementById('model-slider');
+      modelSlider.innerHTML = '';
+      modeller.forEach(model => {
+        const card = document.createElement('div');
+        card.className = 'car-card innovative-car-card';
+        card.innerHTML = `
+          <div class="car-card-header-box">
+            <span class="car-brand">${model.brand}</span>
+            <span class="car-model">${model.model}</span>
+          </div>
+          <div class="car-image-box">
+            <img src="${model.image}" alt="${model.brand} ${model.model}">
+          </div>
+          <div class="car-content-box minimal-content-box">
+            <p>${model.content}</p>
+          </div>
+        `;
+        modelSlider.appendChild(card);
+      });
+    }
+
+    // Slider arrow controls for models
+    document.addEventListener('DOMContentLoaded', function() {
+      const modelSlider = document.getElementById('model-slider');
+      const leftBtn = document.getElementById('model-arrow-left');
+      const rightBtn = document.getElementById('model-arrow-right');
+      if (modelSlider && leftBtn && rightBtn) {
+        leftBtn.onclick = () => {
+          modelSlider.scrollBy({ left: -modelSlider.offsetWidth * 0.8, behavior: 'smooth' });
+        };
+        rightBtn.onclick = () => {
+          modelSlider.scrollBy({ left: modelSlider.offsetWidth * 0.8, behavior: 'smooth' });
+        };
+      }
+    });
+
+    // Şarj istasyonları ile ilgili JS fonksiyonlarını kaldır
+
+    // Bölümler efektli açılsın (Intersection Observer)
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('.section-fade-hidden');
+      const observer = new window.IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-fade-in');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      sections.forEach(section => observer.observe(section));
+    });
+
+    // Hamburger menü aç/kapat
+    function closeMobileMenu() {
+      document.getElementById('main-navbar').classList.remove('navbar-mobile-open');
+      document.body.classList.remove('mobile-menu-open');
+      const overlay = document.getElementById('menu-overlay');
+      if (overlay) overlay.remove();
+    }
+    document.getElementById('hamburger-menu').addEventListener('click', function(e) {
+      const nav = document.getElementById('main-navbar');
+      nav.classList.toggle('navbar-mobile-open');
+      if (nav.classList.contains('navbar-mobile-open')) {
+        document.body.classList.add('mobile-menu-open');
+        // Overlay ekle
+        if (!document.getElementById('menu-overlay')) {
+          const overlay = document.createElement('div');
+          overlay.id = 'menu-overlay';
+          overlay.style.position = 'fixed';
+          overlay.style.top = '0';
+          overlay.style.left = '0';
+          overlay.style.width = '100vw';
+          overlay.style.height = '100vh';
+          overlay.style.background = 'rgba(0,0,0,0.35)';
+          overlay.style.zIndex = '1001';
+          overlay.onclick = closeMobileMenu;
+          document.body.appendChild(overlay);
+        }
+      } else {
+        closeMobileMenu();
+      }
+      e.stopPropagation();
+    });
+    // Menü dışına tıklayınca kapansın
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 700) closeMobileMenu();
+    });
+    // Sayfa ilk açıldığında hamburger butonunu göster/gizle
+    function updateHamburgerDisplay() {
+      const btn = document.getElementById('hamburger-menu');
+      if (window.innerWidth <= 700) {
+        btn.style.display = 'flex';
+      } else {
+        btn.style.display = 'none';
+        closeMobileMenu();
+      }
+    }
+    window.addEventListener('resize', updateHamburgerDisplay);
+    document.addEventListener('DOMContentLoaded', updateHamburgerDisplay);
+  </script>
+  <style>
+.innovative-car-card {
+  background: linear-gradient(135deg, #e0e7ef 60%, #f3e8ff 100%);
+  border-radius: 22px;
+  box-shadow: 0 6px 28px rgba(25, 118, 210, 0.13), 0 2px 8px rgba(0,0,0,0.08);
+  padding: 0 0 24px 0;
+  margin: 0 28px;
+  min-width: 480px;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 2px solid #e0e7ef;
+  position: relative;
+}
+.innovative-car-card:hover {
+  transform: translateY(-10px) scale(1.035);
+  box-shadow: 0 12px 40px rgba(25, 118, 210, 0.18), 0 4px 16px rgba(0,0,0,0.13);
+  border-color: #a21caf;
+}
+.car-card-header-box {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: -22px;
+  background: linear-gradient(90deg, #1976d2 60%, #4ade80 100%);
+  color: #fff;
+  border-radius: 16px 16px 8px 8px;
+  box-shadow: 0 2px 10px rgba(25, 118, 210, 0.10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.18rem;
+  font-weight: 700;
+  padding: 14px 18px 10px 18px;
+  letter-spacing: 0.01em;
+  position: relative;
+  top: -18px;
+  z-index: 2;
+}
+.car-image-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  margin-top: -8px;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.car-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(76, 222, 128, 0.13);
+  background: #fff;
+  border: none;
+}
+.car-content-box {
+  width: 88%;
+  margin: 0 auto;
+  margin-top: 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(76, 222, 128, 0.10);
+  padding: 18px 18px 14px 18px;
+  font-size: 1.05rem;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+  z-index: 1;
+}
+.minimal-content-box {
+  background: linear-gradient(90deg, #f1f5f9 60%, #e0e7ef 100%);
+  color: #222;
+  font-size: 1.07rem;
+  font-weight: 500;
+  box-shadow: 0 1.5px 6px rgba(30, 64, 175, 0.07);
+  border: 1.5px solid #e0e7ef;
+}
+@media (max-width: 900px) {
+  .innovative-car-card {
+    min-width: 320px;
+    max-width: 340px;
+    padding: 0 0 18px 0;
+  }
+  .car-image-box {
+    height: 180px;
+  }
+  .car-card-header-box, .car-content-box {
+    font-size: 0.98rem;
+    padding: 10px 8px 8px 8px;
+  }
+}
+</style>
+</body>
+</html> 
